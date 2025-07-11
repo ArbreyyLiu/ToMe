@@ -66,11 +66,43 @@ If everything is set up correctly, `RunConfig1` and `RunConfig2` should produce 
 
 <img src="pics\demo.png" width="1000">
 
+## 🔥 New: ToMe-FLUX Integration
+
+We've added **ToMe-FLUX integration** that extends Token Merging capabilities to FLUX's transformer-based diffusion model with regional control:
+
+### Features
+- **Regional Dream Rendering**: Different prompts for different image regions
+- **Enhanced Semantic Binding**: Better object-attribute associations in regional generation  
+- **Cross-Regional Consistency**: Maintain semantic consistency across regions
+- **Training-Free**: No additional training required
+
+### Quick Start
+```bash
+# Test the integration structure
+python test_tome_flux_structure.py
+
+# Run demo (after installing dependencies)
+python demo_tome_flux.py --config fast_generation
+
+# Run comparison demo
+python demo_tome_flux.py --comparison
+```
+
+### Available Configurations
+- `regional_object_binding`: Object-attribute binding scenarios
+- `attribute_binding`: Fine-grained attribute binding
+- `complex_scene`: Multi-object complex scenes  
+- `fast_generation`: Optimized for speed
+- `high_quality`: Optimized for quality
+
+For detailed documentation, see [README_FLUX.md](README_FLUX.md).
+
 ## ⚠️ Notes
 
 - **Custom Configurations**: To use custom text prompts and parameters, add a new configuration class in `configs/demo_config.py` and make necessary adjustments in `run_demo.py`.
 - **Parameter Sensitivity**: This method inherits the sensitivity of inference-based optimization techniques, meaning that the generated results are highly dependent on hyperparameter settings. Careful tuning may be required to achieve optimal results.
 - **NLP Models**: When using NLP models like SpaCy for token parsing, ensure the correct language model is installed.
+- **ToMe-FLUX**: For FLUX integration, see the dedicated configuration system in `configs/tome_flux_config.py`
 
 ## 🙏 Acknowledgments
 
